@@ -4,7 +4,7 @@
 
 ---
 
-![Blog Preview](img_readme/blog.png)
+![Blog Preview](img_readme/blog4.png)
 
 ## Key Features
 
@@ -49,26 +49,4 @@
 
 ---
 
-## Installation
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
-
-Set Up the Database:
-
-Import the provided SQL file (blog.sql) into your MySQL server to create the necessary tables.
-
-Configure the database credentials in php/dbconnector.php.
-
-Upload Files to the Server:
-
-Upload the project files to your web server (e.g., using FTP or directly on a local server like XAMPP or WAMP).
-
-Access the Blog:
-
-Open your browser and visit the URL where you uploaded the project (e.g., http://localhost/blog).
-
-Access the Admin Panel:
-
-Log in as an administrator at http://localhost/blog/index.php and click on "Administration".
