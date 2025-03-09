@@ -1,0 +1,621 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #353535; /* color del marco global del body*/
+}
+
+
+
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 80%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 20%;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 5px;
+
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Estilos para el formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-group input[type="text"], .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-group input[type="password"] {
+    width: 250px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="email"] {
+    width: 250px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.form-group input[type="submit"] {
+    background-color: grey;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.form-container {
+    /*max-width: 800px;*/
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    background-color: #f9f9f9;
+}
+
+/* Aseguramos que los campos estén alineados uno al lado del otro */
+.form-group-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;  /* Espacio entre los campos */
+}
+
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+h2 a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del elemento padre (h2) */
+  }
+
+/* Estilo para los mensajes de error */
+p.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Estilo para el botón "Leer más" */
+.boton-leer-mas {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: grey;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Efecto hover */
+.boton-leer-mas:hover {
+    background-color: #555;
+    color: #ddd;
+}
+
+/* Para los checkbox de editar articulo*/
+.checkbox-group {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el texto con el checkbox */
+    margin-bottom: 8px; /* Espaciado entre cada grupo */
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Para los checkbox de crear articulo*/
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column; /* Coloca las categorías en una columna */
+    gap: 8px; /* Espaciado entre categorías */
+}
+
+/* para el mensaje de exito al crear formulario */
+
+p.exito {
+    color: green;
+    font-size: 1.2em; /* Aumenta el tamaño del texto */
+    font-weight: bold; /* Hace que el texto sea negrita */
+    margin-top: 10px; /* Añade un espacio superior */
+}
+
+/* Estilos para editar categorias */
+
+/* Estilo para el contenedor de categorías */
+.categoria-item {
+    margin-bottom: 15px; /* Espacio entre cada categoría */
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    align-items: center; /* Alineación vertical del texto y campo de entrada */
+}
+
+/* Espacio entre el nombre de la categoría y el campo de texto */
+.categoria-item input[type="text"] {
+    margin-left: 10px; /* Espacio a la izquierda del campo de entrada */
+    width: 200px; /* Fija el ancho del campo de entrada para que tenga el mismo tamaño */
+    padding: 5px; /* Espaciado interno del campo de entrada */
+}
+
+.categoria-item label {
+    font-weight: bold; /* Resalta el nombre de la categoría */
+    width: 150px; /* Fija un ancho para el nombre de la categoría */
+    margin-right: 10px; /* Espacio entre el nombre y el campo de entrada */
+}
+
+
+/*Estilos para editar administradores*/
+
+.administrador-item {
+    margin-bottom: 15px; /* Espacio entre cada administrador */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    align-items: center; /* Alineación vertical del texto y campo de entrada */
+}
+
+/* Espacio entre el nombre del administrador y el campo de texto */
+.administrador-item input[type="text"] {
+    margin-left: 10px; /* Espacio a la izquierda del campo de entrada */
+    width: 200px; /* Fija el ancho del campo de entrada para que tenga el mismo tamaño */
+}
+
+.administrador-item label {
+    font-weight: bold; /* Resalta el nombre del administrador */
+    width: 150px; /* Fija un ancho para el nombre del administrador */
+    margin-right: 10px; /* Espacio entre el nombre y el campo de entrada */
+}
+
+/* Estilos para el enlace de eliminar administrador */
+.boton-eliminar {
+    display: inline-block; /* Para que se comporte como un bloque, pero en línea */
+    padding: 5px 10px; /* Espaciado interno del "botón" */
+    background-color: #f44336; /* Color rojo */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.boton-eliminar:hover {
+    background-color: #e53935; /* Color rojo más oscuro al pasar el ratón */
+}
+
+/*Añadir un pequeño margen para separarlo de otros elementos */
+.boton-eliminar {
+    margin-left: 10px;
+}
+
+
+/*-----------------------------------------------*/
+
+.form-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.form-container ul li {
+    margin-bottom: 10px; /* Aumenta el espacio entre cada categoría */
+}
+
+
+
+
+
+/*----------*/
+
+/* Estilo para el contenedor del artículo */
+.preview {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Parte izquierda (Título y resumen) */
+.preview .left {
+    flex: 1;
+    padding-right: 20px;
+}
+
+/* Parte derecha (Imagen) */
+.preview .right {
+    width: 350px;
+    object-fit: contain;
+    height: 250px; 
+}
+
+/* Estilos para el título */
+.preview .titulo h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Estilo para el resumen */
+.preview .resumen p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Estilo para la imagen */
+.preview .right img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Asegura que en pantallas pequeñas las imágenes y el texto se apilen */
+@media screen and (max-width: 800px) {
+    .preview {
+        flex-direction: column;
+    }
+
+    .preview .right {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Quitar el subrayado y cambiar el color de los enlaces dentro de los títulos */
+.titulo a {
+    text-decoration: none; /* Quitar subrayado */
+    color: inherit; /* Usar el color heredado del título */
+}
+
+/* Cambiar el color cuando el enlace es hovered */
+.titulo a:hover {
+    color: inherit; /* Mantener el mismo color al pasar el ratón */
+}
+
+
+/* Estilo para el contenedor de íconos sociales */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    gap: 15px; /* Espacio entre íconos */
+    margin-top: 10px; /* Espacio entre el título y los íconos */
+}
+
+/* Estilo para los íconos */
+.social-icons img {
+    width: 40px; /* Tamaño del ícono */
+    height: 40px;
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+    transition: transform 0.3s ease; /* Animación al pasar el ratón */
+}
+
+/* Efecto hover para los íconos */
+.social-icons img:hover {
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+
+/* Estilo para la sección "Sobre mí" */
+.about-me {
+    text-align: center; /* Centra el contenido */
+    margin-top: 10px; /* Espacio entre el título y la imagen */
+}
+
+/* Estilo para la imagen */
+.about-me img {
+    width: 160px; 
+    height: 160px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 30%; /* Hace la imagen redonda */
+    border: 2px solid #ccc; /* Borde alrededor de la imagen */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+
+/* Estilo para la lista de categorías del main */
+.card ul {
+    list-style-type: disc; /* Cambia los marcadores a puntos */
+    padding-left: 20px; /* Espacio para alinear los puntos */
+    margin: 0;
+}
+
+.card ul li {
+    margin-bottom: 5px; /* Espacio entre las categorías */
+}
+
+/* Estilo para los enlaces de categorías */
+.card ul li a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Usa el color de texto por defecto */
+}
+
+.card ul li a:hover {
+    text-decoration: underline; /* Añade subrayado al pasar el ratón */
+    color: #555; /* Cambia ligeramente el color al pasar el ratón */
+}
+
+
+/* Estilo exclusivo para botones del panel de administración */
+.admin-btn {
+    text-decoration: none; /* Quita el subrayado */
+    padding: 8px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño del texto */
+    color: #fff; /* Texto blanco */
+    background-color: grey; /* Gris estándar */
+    display: inline-block; /* Para mantener forma de botón */
+    margin: 5px 5px 0 0; /* Espaciado entre botones */
+    transition: background-color 0.3s ease; /* Efecto suave al pasar el ratón */
+    width: 160px;
+    text-align: center;
+}
+
+.admin-btn:hover {
+    background-color: #555; /* Gris más oscuro al pasar el ratón */
+}
+
+
+
+
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .footer-section {
+    margin: 10px;
+    flex: 1 1 200px;
+    text-align: left;
+}
+
+.footer h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    margin: 5px 0;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #555;
+}
+
+
+
+.footer .copyright {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+
+/* Para el header con la imagen grande */
+
+
+.headerMain .header-image {
+    padding: 0px;
+    background: white;
+    width: 100%; /* La imagen ocupa todo el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que no haya espacio alrededor */
+    object-fit: cover; /* Cubre toda el área del header si se define una altura fija */
+}
+
+
+/* Header/Blog Title */
+.header {
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+
+
+/*Para la tabla de articulos*/
+
+
+.table {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border-collapse: collapse; /* Elimina espacios entre bordes */
+    margin-top: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde para toda la tabla */
+}
+
+.table th, .table td {
+    text-align: left;
+    padding: 8px; /* Espaciado interno */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+}
+
+/* Ajustar el ancho de la columna del título */
+.table .col-titulo {
+    max-width: 600px; /* Define un ancho máximo para la columna */
+    word-wrap: break-word; /* Permite que el texto se divida en líneas si es necesario */
+}
+
+
+.table th {
+    background-color: #353535; /* color para la cabecera */
+    color: white; /* Texto blanco */
+}
+
+.table tr:nth-child(even) {
+    background-color: #ddd; /* Fondo para filas pares */
+}
+
+.table tr:hover {
+    background-color: #f1f1f1; /* Cambia a gris claro al pasar el ratón */
+}
+
+/* Botones estilizados */
+.table a.btn {
+    text-decoration: none; /* Quita el subrayado */
+    padding: 5px 5px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño del texto */
+    color: #fff; /* Texto blanco */
+    display: inline-block;
+    margin-right: 5px; /* Separación entre botones */
+    margin-top: 5px; /* Espacio superior para evitar amontonamiento */
+    transition: background-color 0.3s ease; /* Efecto suave al cambiar el color */
+}
+
+.table a.btn:hover {
+    filter: brightness(90%); /* Oscurece ligeramente el botón al pasar el ratón */
+}
+
+/* Colores personalizados para los botones */
+.table a.btn-edit {
+    background-color: #5c832f; /* Verde oscuro */
+}
+
+.table a.btn-delete {
+    background-color: #c0392b; /* Rojo */
+}
+
+.table a.btn-status {
+    background-color: #3498db; /* Azul */
+}
+
+
+/*Estilos para los botones del paginador*/
+.paginador {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.paginador a {
+    margin: 0 5px; 
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #ddd;
+    border-radius: 0px;
+    display: inline-block; /* Asegura que los elementos se alineen horizontalmente */
+    box-sizing: border-box; /* Para asegurar que el padding no afecte el tamaño total del enlace */
+}
+
+.paginador a.activo {
+    background-color: #555;
+    color: white;
+}
+
+.paginador a:hover {
+    background-color: grey ;
+}
+
+.paginador a:last-child {
+    margin-right: 0; /* Eliminar el margen derecho en el último elemento */
+}
